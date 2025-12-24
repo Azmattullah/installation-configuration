@@ -12,6 +12,21 @@ sudo useradd -m azmat
 sudo passwd azmat
 ```
 
+### Manual Creation of USER home directory
+
+```
+sudo mkdir -p /home/azmat
+sudo chown azmat:azmat /home/azmat
+sudo chmod 700 /home/azmat  
+```
+
+### Verify and Ensure Correct Home Directory
+```
+ls -ld /home/username
+
+sudo usermod -d /home/username username
+```
+
 ### Switch to the created user
 
 ```bash
@@ -23,7 +38,7 @@ su azmat
 ```bash
 sudo usermod -aG sudo azmat
 ```
-### Create `.ssh` directory and authorized_keys for user `azmat`
+### Create home directory and `.ssh` authorized_keys for user `azmat`
 
 ```bash
 sudo mkdir -p /home/azmat/.ssh
