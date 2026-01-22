@@ -35,6 +35,13 @@ git clone <repository_url>
 git clone https://github.com/azmat711/myproject.git
 ```
 
+### Shallow Cloning remote repository
+
+```bash
+# Speeds up cloning by fetching only the latest commits.
+
+git clone --depth=1 <repository-url>
+```
 
 ### Initialize a new Git repository in local directory
 
@@ -87,6 +94,10 @@ git add .
 git commit -m "Initial commit"
 ```
 
+### Use multi-line commits for more details
+```bash
+git commit -m "Improve password hashing" -m "Uses bcrypt instead of SHA-256 for stronger security"
+```
 ### Push local changes to GitHub
 
 ```bash
@@ -199,4 +210,14 @@ git log --oneline
 
 ```bash
 git reset --soft HEAD~1
+```
+
+### To undo the last commit from the github
+```bash
+git revert HEAD
+
+# then 
+git add .
+git commit -m "reverted"
+git push origin main
 ```
